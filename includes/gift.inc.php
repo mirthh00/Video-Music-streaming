@@ -1,0 +1,135 @@
+<?php
+session_start();
+if(isset($_POST["pay"]))
+{
+    include 'accountdatabase.inc.php';
+    require_once "functions.inc.php";
+    $accountname=mysqli_real_escape_string($conn,$_POST["accountname"]);
+    $accountid=mysqli_real_escape_string($conn,$_POST["accountid"]);
+    $price=mysqli_real_escape_string($conn,$_POST["price"]);
+    $profilename=mysqli_real_escape_string($conn,$_POST["profilename"]);
+
+    $useremail=mysqli_real_escape_string($conn,$_POST["giftemail"]);
+  
+    $catagory=mysqli_real_escape_string($conn,$_POST["catagory"]);
+    $roomid=mysqli_real_escape_string($conn,$_POST["roomid"]);
+    $roomname=mysqli_real_escape_string($conn,$_POST["roomname"]);
+
+    date_default_timezone_set("Africa/Johannesburg");
+    $unlockdate=date("Y-m-d");
+    $date=date("F j");
+    
+include 'dbh.inc.php';
+
+$sql="SELECT * FROM users WHERE usersEmail=?;";
+$stmt=mysqli_stmt_init($conn);
+
+if(!mysqli_stmt_prepare($stmt,$sql)){
+    header("location: ../signup.php?error=stmtfailed");
+    exit();
+}
+
+mysqli_stmt_bind_param($stmt,"s",$useremail);
+mysqli_stmt_execute($stmt);
+$data=mysqli_stmt_get_result($stmt);
+mysqli_stmt_close($stmt);
+$row=mysqli_fetch_assoc($data);
+$rownum=mysqli_num_rows($data);
+$username=$row["usersUid"];
+$userid=$row["id"];
+$userfullname=$row["usersName"];
+$recommender=$row["recommended"];
+$country=$row["usersCountry"];
+
+include 'accountdatabase.inc.php';
+$sql5="SELECT * FROM unlockedaccounts WHERE recommender=?;";
+$stmt=mysqli_stmt_init($conn);
+
+if(!mysqli_stmt_prepare($stmt,$sql5)){
+    header("location: ../signup.php?error=stmtfailed");
+    exit();
+}
+
+mysqli_stmt_bind_param($stmt,"s",$recommender);
+mysqli_stmt_execute($stmt);
+$data1=mysqli_stmt_get_result($stmt);
+mysqli_stmt_close($stmt);
+$rownum4=mysqli_num_rows($data1);
+
+$rownum4=$rownum4+1;
+$revenue=10*($rownum4/100);
+
+$sql7="SELECT * FROM unlockedaccounts WHERE accountname=?;";
+$stmt=mysqli_stmt_init($conn);
+
+if(!mysqli_stmt_prepare($stmt,$sql7)){
+    header("location: ../signup.php?error=stmtfailed");
+    exit();
+}
+
+mysqli_stmt_bind_param($stmt,"s",$accountname);
+mysqli_stmt_execute($stmt);
+$data7=mysqli_stmt_get_result($stmt);
+mysqli_stmt_close($stmt);
+$rownum7=mysqli_num_rows($data7);
+$rownum7=$rownum7+1;
+
+$sql6="SELECT * FROM revenue WHERE accountname=? AND day=? AND country=?;";
+$stmt=mysqli_stmt_init($conn);
+
+if(!mysqli_stmt_prepare($stmt,$sql6)){
+    header("location: ../signup.php?error=stmtfailed");
+    exit();
+}
+
+mysqli_stmt_bind_param($stmt,"sss",$accountname,$date,$country);
+mysqli_stmt_execute($stmt);
+$data2=mysqli_stmt_get_result($stmt);
+mysqli_stmt_close($stmt);
+$row2=mysqli_fetch_assoc($data2);
+$rownum6=mysqli_num_rows($data2);
+$totalprice=$rownum7*$price;
+
+    if($rownum6==0){
+        $unlockers=1;
+        $sql7="INSERT INTO revenue(day,accountname,country,unlockers,returns,totalrevenue,totalunlockers) VALUES (?,?,?,?,?,?,?);";
+        $stmt=mysqli_stmt_init($conn);
+    
+        if(!mysqli_stmt_prepare($stmt,$sql7)){
+            header("location: ../signup.php?error=stmtfailed");
+            exit();
+        }
+    
+        mysqli_stmt_bind_param($stmt, "sssssss",$date,$accountname,$country,$unlockers,$price,$totalprice,$rownum7);
+        mysqli_stmt_execute($stmt);
+        mysqli_stmt_close($stmt);
+    }
+    else{
+        $returns=$row2["returns"]+$price;
+        $unlockers=$row2["unlockers"]+1;
+        $sql8="UPDATE revenue SET returns='$returns' WHERE accountname='$accountname' AND day='$date' AND country='$country';";
+        mysqli_query($conn,$sql8);
+        $sql12="UPDATE revenue SET unlockers='$unlockers' WHERE accountname='$accountname' AND day='$date' AND country='$country';";
+        mysqli_query($conn,$sql12);
+        $sql8="UPDATE revenue SET totalrevenue='$totalprice' WHERE accountname='$accountname' AND day='$date' AND country='$country';";
+        mysqli_query($conn,$sql8);
+        $sql12="UPDATE revenue SET totalunlockers='$rownum7' WHERE accountname='$accountname' AND day='$date' AND country='$country';";
+        mysqli_query($conn,$sql12);
+    }
+
+
+include 'dbh.inc.php';
+$sql2="UPDATE users SET revenue='$revenue' WHERE usersUid='$recommender';";
+$query=mysqli_query($conn,$sql2);
+
+
+include 'accountdatabase.inc.php';
+    addunlockedroom($conn,$roomid,$roomname,$useremail);
+    addunlockedaccount($conn,$accountname,$accountid,$profilename,$userfullname,$username,$useremail,$userid,$catagory,$unlockdate,$recommender);
+
+}
+
+else{
+    header("location: ../subscribe.php");
+    exit();
+}

@@ -1,0 +1,125 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    width: 100%;
+    height: 100%;
+}
+
+nav {
+    position: fixed;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    left: 0;
+    width: 100%;
+    background-color: black;
+    z-index: 10;   
+}
+
+nav img {
+    width: 180px;
+}
+.navigation_links {
+    flex: 1;
+    text-align: right;
+}
+.navigation_links ul li {
+    display: inline-block;
+    padding: 12px 4px;
+    list-style: none;
+    position: relative;
+}
+.navigation_links ul li a {
+    font-family: 'poppins',sans-serif;
+    color: white;
+    text-decoration: none;
+    font-size: 15px;
+}
+.navigation_links ul li:hover {
+    border: 2px  lightskyblue;
+    border-radius: 15px;
+    background: lightskyblue;
+    transition: 0.8s;
+}
+.about_text {
+    width: 100%;
+    height: 100vh;
+    padding: 100px 0px;
+    background: cornflowerblue;
+    text-align: center;
+}
+.about_text div {
+    float: left;
+    padding-left: 290px;
+    padding-top: 50px;
+
+}
+.second_paragraph {
+    text-align: left;
+  
+}
+.first_text {
+    text-align: left;
+    
+}
+.second_text {
+    background: black;
+}
+.second_nav_links ul li a {
+    font-family: 'poppins',sans-serif;
+    font-size: 12px;
+    text-decoration: none;
+    color: white;
+  }
+  .second_text p {
+      color: white;
+  }
+  .second_nav_links ul li::after {
+    content: '';
+    width: 0%;
+    height: 2px;
+    display: block;
+    background: lightskyblue;
+    margin: auto;
+    transition: 0.5s;
+}
+
+.second_nav_links ul li:hover::after {
+    width: 100%;
+}
+.second_text {
+    text-align: left;
+    padding: 0.5% 0.5%;
+    display: flex ;
+    justify-content: space-between;
+    left: 0;
+    
+}
+.second_nav_links ul li {
+    list-style: none;
+    display: inline-block;
+    padding: 8px 10px;
+    position: relative;
+}
+.second_text p {
+    padding-top: 11px;
+}
+.about_text h1 {
+    letter-spacing: 12px;
+    font-size: 50px;
+    font-family: 'Times New Roman', Times, serif;
+}
+.second_nav_links ul li a:active {
+    color: lightskyblue;}
+
+
+    .navigation_links i{
+        margin-right: 8px;
+        color: cornflowerblue;
+    }
+
+ #home{
+        color: cornflowerblue;
+    }

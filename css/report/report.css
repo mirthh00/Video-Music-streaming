@@ -1,0 +1,414 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    width: 100%;
+    height: 100%;
+    background: cornflowerblue;
+}
+
+nav {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  left: 0;
+  width: 100%;
+  background-color: black;
+  z-index: 1112;   
+}
+
+nav img {
+  width: 200px;
+}
+
+.sign-up-box {
+    width: 100%;
+    height: 200vh;
+    background-image: cornflowerblue;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.card {
+    width: 550px;
+    height: 1050px;
+    box-shadow: 0 0 40px 20px rgba(0,0,0,0.4);
+    margin-top: 63px;
+    align-items: center;
+    perspective: 1000px;
+}
+.account{
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  margin-left: 42%;
+  border: 3px solid lightskyblue;
+}
+
+input[type="file"]{
+  display:none;
+}
+label{
+  color: lightskyblue;
+  border: 1px solid lightskyblue;
+  width: 30%;
+  height: 30px;
+  border-radius: 20px;
+  
+  position: absolute;
+  left: 35%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background:transparent ;
+  cursor: pointer;
+  transition: all 0.5s;
+  font-family: 'poppins',sans-serif;
+  font-size: 12px;
+}
+label:hover{
+  background: lightskyblue;
+  color: whitesmoke;
+}
+.filename{
+  position: absolute;
+  left: 47%;
+  top: 53%;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
+.filename2{
+  position: absolute;
+  left: 47%;
+  top: 41%;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
+.inner-box {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 1s;
+}
+.card-front , .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    background-size: cover;
+    background-image: linear-gradient(rgba(0,0,100,0.8) , rgba(0,0,100,0.8)), url("../../images/loader.gif");
+    box-sizing: border-box;
+    padding: 55px;
+    backface-visibility: hidden;
+}
+
+
+.second_text {
+    text-align: left;
+    display: flex ;
+    justify-content: center;
+    z-index: 1111;
+    
+}
+
+.second_text p {
+    padding-top: 11px;
+}
+
+
+.card h2 {
+  font-weight: normal;
+  font-size: 24px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  color: lightskyblue;
+  text-align: center;
+  margin-bottom: 20px;
+}
+.input-box {
+  width: 100%;
+  background: transparent;
+  border: 1px solid lightskyblue;
+  margin: 15px 0;
+  height: 400px;
+  border-radius: 20px;
+  padding: 0 10px;
+  box-sizing: border-box;
+  outline: none;
+  text-align: center;
+  color: #fff;
+}
+button {
+  width: 100%;
+  background: transparent;
+  border: 1px solid lightskyblue;
+  margin: 25px 0 10px;
+  height: 32px;
+  font-size: 12px;
+  border-radius: 20px;
+  padding: 0 5px;
+  box-sizing: border-box;
+  outline: none;
+  color: cornflowerblue;
+  cursor: pointer;
+}
+
+.submit-btn {
+  position: relative;
+  color: lightskyblue;
+}
+
+
+.second_text {
+  background: black;
+}
+.card a ::after {
+  content: '';
+  width: 0%;
+  height: 2px;
+  display: block;
+  background: white;
+  margin: auto;
+  transition: 0.5s;
+  z-index: 2;
+}
+
+.card a :hover::after {
+  width: 100%;
+  z-index: 2;
+}
+
+button:hover {
+  border: 2px  lightskyblue;
+  border-radius: 15px;
+  background: lightskyblue;
+  transition: 0.8s;
+  color: #fff;
+}
+
+.card h6 {
+    font-family: 'poppins',sans-serif;
+    color: cornflowerblue;
+    font-size: 15px;
+    text-align: center;
+}
+.userimage{
+  margin-left: 30%;
+  color: lightskyblue;
+}
+span {
+    font-family: 'Times New Roman', Times, serif;
+    color: white;
+    font-size: 12px;
+    text-align: center;
+}
+.card a {
+    font-family: 'poppins',sans-serif;
+    color: white;
+    font-size: 12px;
+    text-align: center;
+    text-decoration: none;
+    display: block;
+    margin-top: 8px;
+}
+.card h2 {
+    font-family: 'poppins',sans-serif;
+    color: cornflowerblue;
+    text-align: center;
+    font-size: 30px;
+    letter-spacing: 8px;
+    margin-top: auto;
+}
+
+.second_text p {
+    color: white;
+}
+
+.sidebar {
+    display: none;
+}
+
+#check {
+    display: none;
+}
+
+
+#home{
+  color: cornflowerblue;
+}
+
+@media (max-width:1030px)
+{
+  .sign-up-box{
+    height: 150vh;
+  }
+  .card{
+    width: 700px;
+  }
+}
+
+@media (max-width:930px)
+{
+  .sign-up-box {
+    width: 100%;
+    height: 250vh;
+    background: cornflowerblue;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .card {
+    width: 350px;
+    height: 800px;
+    box-shadow: 0 0 40px 20px rgba(0,0,0,0.26);
+    perspective: 1000px;
+  }
+}
+
+@media (max-width:800px)
+{
+  .sign-up-box{
+    height: 130vh;
+  }
+  .card{
+    width: 550px;
+    height: 900px;
+  }
+}
+
+@media (max-width:750px)
+{
+  .sign-up-box {
+    width: 100%;
+    height: 350vh;
+    background: cornflowerblue;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .card {
+    width: 500px;
+    height: 900px;
+    box-shadow: 0 0 40px 20px rgba(0,0,0,0.26);
+    perspective: 1000px;
+  }
+
+}
+
+@media (max-width:600px)
+{
+  .sign-up-box{
+    height: 120vh;
+  }
+  .card{
+    width: 500px;
+  }
+}
+
+@media (max-width:570px)
+{
+  .sign-up-box{
+    height: 360vh;
+  }
+}
+
+@media (max-width:500px)
+
+{
+
+
+.sign-up-box {
+  width: 100%;
+  height: 120vh;
+  background: cornflowerblue;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.card {
+  width: 350px;
+  height: 850px;
+  box-shadow: 0 0 40px 20px rgba(0,0,0,0.26);
+  perspective: 1000px;
+}
+
+.userimage{
+  margin-left: 10%;
+  
+}
+
+.account{
+  margin-left: 30%;
+}
+.second_text{
+  display: inline;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: black;
+}
+body{
+  background: black;
+}
+
+
+}
+@media(max-width:430px){
+  .sign-up-box{
+    height: 140vh;
+  }
+}
+@media (max-width:413px)
+{
+  nav img{
+    width: 180px;
+  }
+  .sign-up-box {
+    height: 120vh;
+  
+  }
+  .card {
+    width: 300px;
+    height: 850px;
+  }
+  
+
+
+.userimage{
+  margin-left: 10%;
+  
+}
+
+.account{
+  margin-left: 30%;
+}
+
+  
+}
+
+@media (max-width:380px)
+{
+  .sign-up-box {
+    height: 150vh;
+  
+  }
+  
+
+}
+@media (max-width:330px)
+{
+ body{
+  background: cornflowerblue;
+ }
+ .second_text{
+  width: 105%;
+ }
+ .sign-up-box {
+  height: 180vh;
+
+}
+}

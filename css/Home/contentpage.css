@@ -1,0 +1,2152 @@
+
+
+*{
+    margin: 0;
+    padding: 0;
+}
+html{
+    height: -webkit-fill-available;
+  }
+body {
+    width: 100%;
+    height: -webkit-fill-available;
+    background: var(--primary-color);
+}
+
+.dark-theme {
+    --primary-color: black;
+    --secondary-color: white;
+}
+
+.white-theme{
+    --primary-color:whitesmoke;
+    --secondary-color:black;
+   
+}
+.white-theme nav{
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+
+
+.sidebar img {
+    width: 200px;
+    padding: 20px 0px;
+}
+
+.sidebar ul li a{
+    list-style: none;
+    text-decoration: none;
+    font-family: 'poppins',sans-serif;
+    letter-spacing: 2px;
+    height: 100%;
+    width: 100%;
+    line-height: 50px;
+    color: var(--secondary-color);
+    padding-left: 12px;
+    color: white;
+    font-size: 14px;
+}
+.sidebar {
+    width: 300px;
+    height: 100vh;
+    background: var(--primary-color);
+    position: fixed;
+    top: 0;
+    padding-top: 85px;
+    left: -300px;
+    transition: all 0.5s ease-in-out;
+    z-index: 2;
+    background: transparent;
+    background-image: linear-gradient(rgba(0,0,100,0.8) , rgba(0,0,100,0.8));
+}
+
+
+.sidebar ul li a:hover{
+    border: solid 3px lightskyblue;
+    border-radius: 20px;
+    background: lightskyblue;
+    width: max-content;
+    padding-left: 12px;
+    transition: 0.4s;
+}
+
+.sidebar ul li i {
+    margin-right: 12px;
+    color: cornflowerblue;
+}
+
+#check {
+    display: none;
+}
+
+label #btn,label #cancel {
+    position: absolute;
+    cursor: pointer;
+}
+label #btn {
+    font-size: 48px;
+    color: cornflowerblue;
+    transition: all 0.5s ease;
+    padding: 0px 0px;
+    margin-top: 10px;
+    opacity: 0.9;
+}
+label #btn:hover{
+    opacity: 1;
+}
+
+label #cancel {
+    z-index: 1111;
+    left: -220px;
+    top: 100px;
+    font-size: 20px;
+    color: cornflowerblue;
+    transition: all 0.5s ease;
+    position: fixed;
+}
+
+#check:checked~.sidebar {
+    left: 0;
+}
+#check:checked ~ label #cancel {
+    left: 220px;
+}
+#check:checked ~ label #btn {
+    opacity: 0;
+    pointer-events: none;
+}
+
+nav #img{
+    width: 200px;
+    padding: 0px 60px;
+}
+
+.nav-right ul li {
+    display: inline-block;
+    list-style: none ;
+    padding: 12px 6px;
+ }
+.flex-div {
+    display: flex;
+    align-items: center;
+}
+
+.account{
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    cursor: pointer;
+    padding: 0px 0px;
+    border: 2px solid cornflowerblue;
+}
+.minimenu{
+    position: absolute;
+    background: var(--primary-color);
+    width: fit-content;
+ 
+    display: inline-block;
+    padding: 10px;
+    border-top: 0;
+    top: 60px;
+    right: 0;
+    background: transparent;
+    background-image: linear-gradient(rgba(0,0,100,0.6) , rgba(0,0,100,0.6));
+    height: fit-content;
+    
+}
+.minimenu ul li a{
+    padding: 0px 0px;
+    color: white;
+    font-family: 'poppins',sans-serif;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.minimenu ul li a::after {
+    content: '';
+    width: 0%;
+    height: 2px;
+    display: block;
+    background: lightskyblue;
+    transition: 0.5s;
+}
+
+.minimenu ul li a:hover::after {
+    width: 100%;
+}
+
+nav {
+    padding: 5px 10px;
+    background: black;
+    display: flex;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.4);
+}
+
+
+.nav-right-icn i {
+    color: cornflowerblue;
+    font-size: 25px;
+    cursor: pointer;
+    opacity: 0.9;
+}
+
+.nav-right-icn i:hover{
+    opacity: 1;
+}
+
+.nav-middle i {
+    color: cornflowerblue;
+    font-size: 25px;
+    padding: 0px 4px;
+    cursor: pointer;
+    opacity: 0.9;
+}
+.nav-middle i:hover{
+    opacity: 1;
+}
+.minimenu i{
+    color: cornflowerblue;
+    margin-right: 12px;
+    font-size: 16px;
+}
+
+.search,.search1 {
+    border: solid 2px cornflowerblue;
+    border-radius: 20px;
+    height: 30px;
+    width: 700px;
+    background: whitesmoke;
+    text-align: center;
+    outline: none;
+}
+.banner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.05);
+    background: transparent;
+    
+}
+.banner h1 {
+    color: var(--secondary-color);
+    margin-top: 20px;
+    letter-spacing: 8px;
+    word-spacing: 0px;  
+    font-family: 'poppins', regular-400;
+    font-size: 30px;
+    font-weight: normal;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1; /* number of lines to show */
+            line-clamp: 1; 
+    -webkit-box-orient: vertical;
+}
+
+.secondbanner {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.05);
+    background: transparent;
+    text-align: center;
+}
+
+.secondbanner h1 {
+    color: var(--secondary-color);
+    margin-top: 30px;
+    letter-spacing: 12px;
+    word-spacing: 0px;
+    font-size: 16px;
+    font-family: 'poppins',regular-400;
+    opacity: 0.5;
+    
+}
+.secondbanner i{
+    color: cornflowerblue;
+    opacity: 0.5;
+}
+
+#preloader
+{
+    background: whitesmoke url("../../images/loader2.gif") no-repeat center center;
+    background-size: 10%;
+    width: 100%;
+    height: 100vh;
+    z-index: 15;
+    position: fixed;
+}
+
+
+
+#selected{
+    border: solid 3px lightskyblue;
+    border-radius: 20px;
+    background: lightskyblue;
+    width: max-content;
+    padding-left: 12px;
+}
+
+.ipaccount{
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border-top: 3.5px solid rgba(65, 105, 225, 0.74);
+    border-bottom: 2.5px solid rgba(81, 136, 238, 0.904);
+    border-left: 3px solid rgba(81, 136, 238, 0.904);
+    border-right: 3px solid rgba(65, 105, 225, 0.856);
+}
+.a{
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    
+}
+.accountscontainer{
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    gap: 16px;
+    margin-top: 20px;
+    margin-left: 8px;
+    margin-right: 8px;
+    box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.01);
+    height: 100px;
+    overflow-x: scroll;
+    scroll-behavior: smooth;
+    overflow-y: hidden;
+}
+
+.accountscontainer::-webkit-scrollbar{
+    display: none;
+}
+
+.thirdbanner{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    margin-top: 30px;
+}
+
+#button{
+    background: transparent;
+    border-color: transparent;
+}
+
+.thirdbanner h1{
+    color: var(--secondary-color);
+    letter-spacing: 12px;
+    word-spacing: 0px;
+    font-size: 20px;
+    font-family: 'poppins',regular-400;
+    opacity: 0.95;
+    font-weight: normal;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1; /* number of lines to show */
+            line-clamp: 1; 
+    -webkit-box-orient: vertical;
+}
+
+.flex-div {
+    display: flex;
+    align-items: center;
+}
+
+.thumbnail {
+    width: 250px;
+    height: 150px;
+    border-radius: 8px;
+    border: 1px solid gray;
+   }
+.thumbnail:hover{
+    border: 2px solid gray;
+}
+
+.accounticon{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    cursor: pointer;
+    padding: 0px 0px;
+    margin-right: 8px;
+}
+
+.videodescription{
+    width: 250px;
+    overflow: hidden;
+   text-overflow: ellipsis;
+   display: -webkit-box;
+   -webkit-line-clamp: 2; /* number of lines to show */
+           line-clamp: 2; 
+   -webkit-box-orient: vertical;
+}
+
+a{
+    text-decoration: none;
+}
+
+.video p,a{
+    color: var(--secondary-color);
+    opacity: 1;
+    font-family: 'poppins',regular-400;
+    font-size: 14px;
+    z-index: 1;
+    opacity: 0.9;
+}
+a{
+    font-size: 12px;
+}
+#time{
+    font-size: 12px;
+    opacity: 0.7;
+    z-index: 1;
+    font-family: 'poppins',regular-400;
+}
+.contentcontainer{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-column-gap: 20px;
+    grid-row-gap: 25px;
+    margin-top: 25px;
+    margin-left: 8px;
+    margin-right: 8px;
+}
+
+  .subscribe{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin-top: 50px;
+  }
+  .subscribebox{
+    width: 500px;
+    height: 350px;
+    border: 2px solid cornflowerblue;
+    border-radius: 20px;
+  }
+  #account{
+    margin-top: 20px;
+  }
+  .subaccount{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  #paymentinfo{
+    color: cornflowerblue;
+    font-family: 'poppins',sans-serif;
+    margin-top: 30px;
+    margin-left: 20px;
+  }
+  #paymentbutton{
+    width: 200px;
+    height: 35px;
+    border: 2px solid lightskyblue;
+    border-radius: 20px;
+    margin-top: 30px;
+    background: transparent;
+    color: cornflowerblue;
+    font-family: 'poppins',sans-serif;
+    cursor: pointer;
+    transition: all 0.5s;
+  }
+  #paymentbutton:hover{
+    background: lightskyblue;
+    color: white;
+  }
+ 
+  .input-box {
+    width: 200px;
+    height: 35px;
+    border: 2px solid lightskyblue;
+    border-radius: 20px;
+    margin-top: 30px;
+    background: transparent;
+    color: cornflowerblue;
+    font-family: 'poppins',sans-serif;
+    cursor: pointer;
+    transition: all 0.5s;
+    outline: none;
+    text-align: center;
+    color: lightskyblue;
+    
+  }
+
+  .a p{
+    color: var(--secondary-color);
+    font-family: 'poppins',regular-400;
+    font-size: 14px;
+    text-align: center;
+  }
+
+  #header{
+    color: var(--secondary-color);
+  }
+
+.verify img{
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+}
+#search,.search1{
+    display: none;
+}
+.second-nav,.mobile{
+    display: none;
+}
+.second-nav{
+    z-index: 1110;
+}
+
+.chatbox{
+    width: 98%;
+    background: transparent;
+    margin-top: 20px;
+    margin-left: 12px;
+    border-radius: 0px;
+    border-left: 0px;
+    border-right: 0px;
+    margin-right: 0px;
+    color: var(--secondary-color);
+    border-bottom: 2px solid cornflowerblue;
+    font-family: 'poppins',sans-serif; 
+}
+.ipaccountverify{
+    height: 45px;
+    width: 45px;
+    border-radius: 50%;
+}
+.room{
+    display: flex;
+    align-items: center;
+}
+.roomverify{
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+}
+.roomname{
+    font-size: 20px;
+    margin-left: 8px;
+}
+
+.chat,.chats{
+    color: var(--secondary-color);
+    opacity: 0.9;
+    font-family: 'poppins',regular-400;
+    margin-top: 12px;
+    margin-bottom: 12px;
+    font-size: 15px;
+}
+.chattime{
+    opacity: 0.8;
+    font-family: 'poppins',regular-400;
+    font-size: 12px;
+}
+b{
+    color: lightgreen;
+    opacity: 1;
+}
+.chatbox i{
+    color: gold;
+}
+.chatbox button{
+    background: cornflowerblue;
+    opacity: 0.8;
+    color: White;
+    font-family: 'poppins',sans-serif;
+    width: 120px;
+    height: 30px;
+    text-align: center;
+    cursor: pointer;
+    border: 2px solid cornflowerblue;
+}
+
+.chatbox button:hover{
+    opacity: 1;
+}
+.aa,.aaa{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.a{
+    width: max-content;
+}
+.featuredverify{
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+}
+.aaaa{
+    font-family: 'poppins',regular-400;
+    opacity: 0.9;
+}
+
+.videoviews,.un{
+    overflow: hidden;
+   text-overflow: ellipsis;
+   display: -webkit-box;
+   -webkit-line-clamp: 1; /* number of lines to show */
+           line-clamp: 1; 
+   -webkit-box-orient: vertical;
+}
+
+.accountname{
+    font-size: 20px;
+    font-family: 'poppins',regular-400;
+}
+.r{
+    margin-left: 8px;
+}
+.un{
+    opacity: 0.8;
+    font-size: 12px;
+    font-family: 'poppins',regular-400;
+}
+#dark,.white-theme #theme-icon{
+    color: gray;
+}
+#light,.dark-theme #theme-icon{
+    color: gold;
+}
+@media (max-width:2000px)and (orientation: landscape)
+{
+    .search{
+        width: 1000px;
+    }
+}
+@media (max-width:1600px)and (orientation: landscape)
+{
+    .search{
+        width: 800px;
+    }
+}
+
+@media (max-width:1400px)and (orientation: landscape)
+{
+    .search{
+        width: 700px;
+    }
+}
+
+  @media (max-width:1250px)and (orientation: landscape)
+{
+    .search{
+        width: 670px;
+    } nav {
+        padding: 0px 10px;
+    }
+
+    .sidebar {
+        padding-top: 60px;
+        overflow-y: scroll;
+    }
+    label #cancel {
+        top: 78px;
+    }
+    ::-webkit-scrollbar{
+        width: 0em;
+        
+      }
+
+    .accountscontainer{
+        margin-top: 50px;
+        margin-left: 8px;
+        margin-right: 8px;
+        box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.01);
+    }
+    
+    .thirdbanner{
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: transparent;
+        margin-top: 30px;
+    }
+    
+    .thirdbanner h1,.banner h1{
+    
+        letter-spacing: 8px;
+        word-spacing: 0px;
+        font-size: 25px;
+        font-weight: normal;
+    }
+    
+    #header{
+        margin-top: 30px;
+        font-size: 20px;
+    }
+    .ipaccount,.a{
+        width: 100px;
+        height: 100px;
+    }
+    .nav-right i {
+        
+        font-size: 24px;
+
+    }
+    
+    .nav-middle i {
+        font-size: 26px;
+        padding: 0px 4px;
+       
+    }
+   
+    .contentcontainer{
+        
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        grid-column-gap: 40px;
+        
+    }
+    
+    .thumbnail,.videodescription{
+        width: 225px;
+    }
+  
+}
+
+@media (max-width:1200px)and (orientation: landscape)
+
+{
+    .search{
+        width: 600px;
+    }
+    
+}
+
+@media (max-width:1150px)and (orientation: landscape)
+
+{
+    .search{
+        width: 550px;
+    }
+    
+}
+
+@media (max-width:1100px)and (orientation: landscape)
+{
+    .search{
+        width: 500px;
+    } nav {
+        padding: 0px 10px;
+    }
+
+    .sidebar {
+        padding-top: 60px;
+        overflow-y: scroll;
+    }
+    label #cancel {
+        top: 78px;
+    }
+    ::-webkit-scrollbar{
+        width: 0em;
+        
+      }
+
+    .accountscontainer{
+        margin-top: 50px;
+        margin-left: 8px;
+        margin-right: 8px;
+        box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.01);
+    }
+    
+    .thirdbanner{
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: transparent;
+        margin-top: 30px;
+    }
+    
+    
+    
+    #header{
+        margin-top: 30px;
+        font-size: 20px;
+    }
+    .ipaccount,.a{
+        width: 100px;
+        height: 100px;
+    }
+    .nav-right i {
+        
+        font-size: 24px;
+
+    }
+    
+    .nav-middle i {
+        font-size: 26px;
+        padding: 0px 4px;
+       
+    }
+    
+}
+@media (max-width:1050px)and (orientation: landscape)
+{
+    .search{
+        width: 450px;
+    } nav {
+        padding: 0px 10px;
+    }
+
+    .sidebar {
+        padding-top: 60px;
+        overflow-y: scroll;
+    }
+    label #cancel {
+        top: 78px;
+    }
+    ::-webkit-scrollbar{
+        width: 0em;
+        
+      }
+
+    .accountscontainer{
+        margin-top: 50px;
+        margin-left: 8px;
+        margin-right: 8px;
+        box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.01);
+    }
+    
+    .thirdbanner{
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: transparent;
+        margin-top: 30px;
+    }
+    
+    
+    
+   
+    .ipaccount{
+        width: 50px;
+        height: 50px;
+    }
+    .nav-right i {
+        
+        font-size: 24px;
+
+    }
+    
+    .nav-middle i {
+        font-size: 24px;
+        padding: 0px 4px;
+       
+    }
+   
+}
+
+@media (max-width:1000px)and (orientation: landscape)
+
+{
+    .search{
+        width: 400px;
+    }
+    
+}
+
+@media (max-width:950px)and (orientation: landscape)
+
+{
+    .search{
+        width: 350px;
+    }
+    
+}
+
+@media (max-width:900px)and (orientation: landscape)
+{
+    .search{
+        width: 400px;
+        height: 28px;
+    } nav {
+        padding: 0px 10px;
+        position: fixed;
+        top: 0;
+        width: -webkit-fill-available;
+    }
+
+    .sidebar {
+        padding-top: 60px;
+        overflow-y: scroll;
+    }
+    label #cancel {
+        top: 78px;
+    }
+    ::-webkit-scrollbar{
+        width: 0em;
+        
+      }
+    
+    .thirdbanner{
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: transparent;
+        margin-top: 30px;
+    }
+    
+    .thirdbanner h1{
+     
+        letter-spacing: 8px;
+        word-spacing: 0px;
+        font-size: 15px;
+    }
+    
+   
+    .ipaccount{
+        width: 50px;
+        height: 50px;
+    }
+    .nav-right i {
+        
+        font-size: 25px;
+
+    }
+    
+    .nav-middle i {
+        font-size: 20px;
+        padding: 0px 4px;
+       
+    }
+    nav #img {
+        width: 150px;
+        margin-top: 0px;
+        padding: 0px 0px;
+        margin-left: 30px;
+    }
+    label #btn {
+        font-size: 30px;
+        padding: 0px 0px;
+        margin-top: 9px;
+    }
+    .account{
+        margin-left: 8px;
+    }
+    #theme-icon{
+        font-size: 25px;
+    }
+    .container{
+        margin-top: 60px;
+    }
+    
+    
+}
+@media (max-width:800px)and (orientation: landscape)
+{
+    .search{
+        width: 300px;
+        
+    } 
+
+    .sidebar {
+        padding-top: 60px;
+        overflow-y: scroll;
+    }
+    label #cancel {
+        top: 78px;
+    }
+    ::-webkit-scrollbar{
+        width: 0em;
+        
+      }
+
+    .accountscontainer{
+        margin-top: 50px;
+        margin-left: 8px;
+        margin-right: 8px;
+        box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.01);
+    }
+    
+    .thirdbanner{
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: transparent;
+        margin-top: 30px;
+    }
+    
+    .thirdbanner h1{
+        letter-spacing: 8px;
+        word-spacing: 0px;
+        font-size: 15px;
+    }
+    
+  
+    .ipaccount{
+        width: 50px;
+        height: 50px;
+    }
+    
+    
+    .nav-middle i {
+        
+        padding: 0px 4px;
+       
+    }
+   
+ 
+}
+
+@media (max-width:700px)and (orientation: landscape){
+    .search{
+        width: 250px;
+    }
+
+    .account{
+        width: 20px;
+        height: 20px;
+        margin-top: 0;
+    }
+   
+   
+    
+    .nav-middle i,.nav-right-icn i {
+        font-size: 22px;
+    }
+   
+    
+    .banner h1 {
+       margin-top: 30px;
+       letter-spacing: 4px;
+       font-size: 20px;  
+   }
+   .secondbanner h1 {
+       margin-top: 30px;
+       letter-spacing: 4px;
+       font-size: 10px;
+      
+   }
+   .secondbanner i{
+       font-size: 10px;
+   }
+   .minimenu{
+    top: 35px;
+}
+
+.thirdbanner{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    margin-top: 30px;
+}
+
+.thirdbanner h1{
+    letter-spacing: 8px;
+    word-spacing: 0px;
+    font-size: 15px;
+}
+
+
+.ipaccount{
+    width: 50px;
+    height: 50px;
+}
+
+
+}
+
+
+@media (max-width:600px)and (orientation: landscape){
+    .search{
+        width: 150px;
+        height: 20px;
+    }
+
+    .account{
+        width: 18px;
+        height: 18px;
+        margin-top: 0;
+    }
+    nav #img {
+        width: 100px;
+        margin-top: 2px;
+        padding: 0px 0px;
+    }
+    label #btn {
+        font-size: 30px;
+        padding: 0px 0px;
+        margin-top: 10px;
+    }
+    nav {
+        padding: 0px 10px;
+    }
+    .nav-right i,#theme-icon {
+        font-size: 20px;
+    }
+    .nav-middle i {
+        font-size: 20px;
+    }
+    .nav-right ul li {
+        padding: 6px 1px;
+     }
+    
+    .banner h1 {
+       margin-top: 30px;
+       letter-spacing: 4px;
+       font-size: 20px;  
+   }
+   .secondbanner h1 {
+       margin-top: 30px;
+       letter-spacing: 4px;
+       font-size: 10px;
+      
+   }
+   .secondbanner i{
+       font-size: 10px;
+   }
+   .minimenu{
+    top: 35px;
+}
+
+.accountscontainer{
+    margin-top: 50px;
+    margin-left: 8px;
+    margin-right: 8px;
+    box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.01);
+}
+
+.thirdbanner{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    margin-top: 30px;
+}
+
+.thirdbanner h1{
+    letter-spacing: 8px;
+    word-spacing: 0px;
+    font-size: 15px;
+}
+
+
+.ipaccount{
+    width: 50px;
+    height: 50px;
+}
+.thumbnail,.videodescription{
+    width: 100%;
+}
+.thumbnail{
+    height: 200px;
+    border-radius: 0px;
+}
+
+
+}
+
+
+@media (max-width:400px)and (orientation: landscape){
+    .search{
+        display: none;
+    }
+    .nav-right i,label #btn {
+        display: none;
+    }
+    #search{
+        display: block;
+    }
+    .search1{
+        width: 320px;
+        height: 25px;
+        margin-right: 0px;
+        margin-left: 0px;
+        padding: 0px 0px;
+        font-size: 14px;
+        font-family: 'poppins',regular-400;
+    }
+    nav{
+        height: 50px;
+    }
+    nav {
+        padding: 0px 0px;
+        background: black;
+    }
+    #theme-icon{
+        color: cornflowerblue;
+        display: block;
+    }
+    .nav-right-icn i {
+        font-size: 22px;
+        margin-right: 8px;
+    }
+    #theme-icon{
+        margin-left: 12px;
+    }
+    nav #img {
+        width: 140px;
+        padding: 0px 0px;
+        margin-left: 0px;
+    }
+    .thirdbanner h1{
+        color: var(--secondary-color);
+        font-size: 12px;
+    }
+    .white-theme #theme-icon{
+        color: cornflowerblue;
+    }
+    .minimenu ul li a{
+        font-size: 12px;
+        font-family: 'poppins',regular-400;
+      }
+      .minimenu i{
+          margin-right: 8px;
+          font-size: 16px;
+          display: unset;
+      }
+      .minimenu ul li{
+        margin-bottom: 20px;
+      }
+      .minimenu{
+    
+        padding: 10px;
+        top: 45px;
+    }
+    .banner h1 {
+        margin-top: 30px;
+        letter-spacing: 4px;
+        font-size: 16px;  
+    }
+    .secondbanner h1 {
+        margin-top: 30px;
+        letter-spacing: 4px;
+        font-size: 12px;
+    }
+
+}
+@media (max-width:1200px)and (orientation: portrait)
+{
+    
+    .search{
+        width: 400px;
+    } nav {
+        padding: 0px 10px;
+    }
+
+    .sidebar {
+        padding-top: 60px;
+        overflow-y: scroll;
+    }
+    label #cancel {
+        top: 78px;
+    }
+    ::-webkit-scrollbar{
+        width: 0em;
+        
+      }
+
+    .accountscontainer{
+        margin-top: 50px;
+        margin-left: 8px;
+        margin-right: 8px;
+        box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.01);
+    }
+    
+    .thirdbanner{
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: transparent;
+        margin-top: 30px;
+    }
+    
+    .thirdbanner h1,.banner h1{
+       
+        letter-spacing: 8px;
+        word-spacing: 0px;
+        font-size: 20px;
+        font-weight: normal;
+    }
+    
+    
+    .ipaccount,.a{
+        width: 100px;
+        height: 100px;
+    }
+    .nav-right i {
+        
+        font-size: 24px;
+
+    }
+    
+    .nav-middle i {
+        font-size: 26px;
+        padding: 0px 4px;
+       
+    }
+    
+}
+
+@media (max-width:1000px)and (orientation: portrait)
+{
+   
+    .search{
+        width: 450px;
+        height: 20px;
+    }
+
+    .account{
+        width: 20px;
+        height: 20px;
+        margin-top: 0;
+    }
+    nav #img {
+        width: 120px;
+        margin-top: 2px;
+        padding: 0px 30px;
+    }
+    label #btn {
+        font-size: 26px;
+        padding: 0px 0px;
+        margin-top: 7px;
+    }
+    nav {
+        padding: 0px 10px;
+    }
+    .nav-right i {
+        font-size: 18px;
+    }
+    .nav-middle i {
+        font-size: 20px;
+    }
+    .nav-right ul li {
+        padding: 6px 1px;
+     }
+    
+   
+   
+   .minimenu{
+    top: 35px;
+   }
+}
+@media (max-width:900px)and (orientation: portrait)
+{
+
+    .search{
+        width: 400px;
+        height: 20px;
+    }
+
+    .account{
+        width: 20px;
+        height: 20px;
+        margin-top: 0;
+    }
+    nav #img {
+        width: 120px;
+        margin-top: 2px;
+        padding: 0px 0px;
+        margin-left: 30px;
+    }
+    label #btn {
+        font-size: 30px;
+        padding: 0px 0px;
+        margin-top: 8px;
+    }
+    nav {
+        padding: 0px 10px;
+    }
+    .nav-right i {
+        font-size: 24px;
+    }
+    .nav-middle i {
+        font-size: 25px;
+    }
+    .nav-right ul li {
+        padding: 6px 1px;
+     }
+    
+  
+  
+  
+   .minimenu{
+    top: 35px;
+   }
+
+   .contentcontainer{
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-column-gap: 50px;
+    grid-row-gap: 50px;
+    margin-top: 50px;
+    margin-left: 8px;
+    margin-right: 8px;
+}
+
+.thumbnail,.videodescription{
+    width: 225px;
+}
+
+.video p,a{
+    font-size: 12px;
+    z-index: 1;
+    opacity: 0.9;
+}
+#time{
+    font-size: 10px;
+    opacity: 0.6;
+    z-index: 1;
+}
+    
+
+   
+}
+@media (max-width:800px)and (orientation: portrait){
+    .search{
+        width: 325px;
+        height: 25px;
+    }
+
+    .account{
+        width: 20px;
+        height: 20px;
+        margin-top: 0;
+        margin-left: 8px;
+    }
+    nav #img {
+        width: 140px;
+        margin-top: 2px;
+    }
+    label #btn {
+        font-size: 30px;
+        padding: 0px 0px;
+        margin-top: 10px;
+    }
+    nav {
+        padding: 0px 10px;
+    }
+    .nav-right i {
+        font-size: 24px;
+    }
+    .nav-middle i {
+        font-size: 26px;
+    }
+    .nav-right ul li {
+        padding: 6px 1px;
+     }
+    
+    .banner h1 {
+       margin-top: 30px;
+       letter-spacing: 4px;
+       font-size: 30px;  
+   }
+   .secondbanner h1 {
+       margin-top: 30px;
+       letter-spacing: 4px;
+       font-size: 15px;
+      
+   }
+   .secondbanner i{
+       font-size: 15px;
+   }
+   .minimenu{
+    top: 35px;
+}
+
+.accountscontainer{
+    margin-top: 50px;
+    margin-left: 8px;
+    margin-right: 8px;
+    box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.01);
+}
+
+.thirdbanner{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    margin-top: 30px;
+}
+
+.thirdbanner h1{
+   
+    letter-spacing: 8px;
+    word-spacing: 0px;
+    font-size: 20px;
+}
+
+.contentcontainer{
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-column-gap: 25px;
+    grid-row-gap: 50px;
+    margin-top: 50px;
+    margin-left: 8px;
+    margin-right: 8px;
+}
+
+.thumbnail,.videodescription{
+    width: 225px;
+}
+
+.video p,a{
+    font-size: 12px;
+    z-index: 1;
+    opacity: 0.9;
+}
+#time{
+    font-size: 10px;
+    opacity: 0.6;
+    z-index: 1;
+}
+
+}
+@media (max-width:700px)and (orientation: portrait){
+    .search{
+        width: 300px;
+        height: 20px;
+    }
+
+    .account{
+        width: 20px;
+        height: 20px;
+        margin-top: 0;
+    }
+    nav #img {
+        width: 110px;
+        margin-top: 2px;
+    }
+    label #btn {
+        font-size: 25px;
+        padding: 0px 0px;
+        margin-top: 7px;
+    }
+    nav {
+        padding: 0px 10px;
+    }
+    .nav-right i {
+        font-size: 24px;
+    }
+    .nav-middle i {
+        font-size: 26px;
+    }
+    .nav-right ul li {
+        padding: 6px 1px;
+     }
+    
+    .banner h1 {
+       margin-top: 30px;
+       letter-spacing: 4px;
+       font-size: 20px;  
+   }
+   .secondbanner h1 {
+       margin-top: 30px;
+       letter-spacing: 4px;
+       font-size: 10px;
+      
+   }
+   .secondbanner i{
+       font-size: 10px;
+   }
+   .minimenu{
+    top: 35px;
+}
+
+.accountscontainer{
+    margin-top: 50px;
+    margin-left: 8px;
+    margin-right: 8px;
+    box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.01);
+}
+
+.thirdbanner{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    margin-top: 30px;
+}
+
+.thirdbanner h1{
+   
+    letter-spacing: 8px;
+    word-spacing: 0px;
+    font-size: 20px;
+}
+
+
+.thumbnail {
+    width: 250px;
+    height: 150px;
+    border-radius: 8px;
+   }
+.videodescription{
+    width: 250px;
+}
+
+.contentcontainer{
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-column-gap: 25px;
+    grid-row-gap: 25px;
+    margin-top: 50px;
+    margin-left: 8px;
+    margin-right: 8px;
+}
+.ipaccount{
+    width: 60px;
+    height: 60px;
+}
+
+}
+
+@media (max-width:650px)and (orientation: portrait){
+    .search{
+        width: 250px;
+    }
+}
+@media (max-width:600px)and (orientation: portrait){
+    .search{
+        width: 200px;
+    }
+    .thumbnail {
+        width: 250px;
+        height: 150px;
+        border-radius: 8px;
+       }
+    .videodescription{
+        width: 250px;
+    }
+}
+
+@media (max-width:550px)and (orientation: portrait){
+    .search{
+        width: 150px;
+    }
+    .thumbnail {
+        width: 200px;
+        height: 100px;
+        border-radius: 8px;
+       }
+    .videodescription{
+        width: 200px;
+    }
+    .contentcontainer{
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        grid-column-gap: 15px;
+        grid-row-gap: 50px;
+        margin-top: 50px;
+        margin-left: 8px;
+        margin-right: 8px;
+    }
+    .ipaccount{
+        width: 50px;
+        height: 50px;
+    }
+}
+
+
+@media (max-width:490px) and (orientation: portrait)
+{
+    
+    .mobile{
+        display: unset;
+    }
+    .nav-right-icn i,#voice-icon{
+        display: none;
+    }
+    #theme-icon{
+        display: none;
+    }
+    .thumbnail {
+        width: 100%;
+        height: 350px;
+        border-radius: 0px;
+       }
+    .minimenu{
+       
+        padding: 10px;
+        top: 35px;
+    }
+    .minimenu ul li a{
+      font-size: 6px;
+    }
+    .minimenu i{
+        margin-right: 8px;
+    }
+    .account{
+        width: 14px;
+        height: 14px;
+        margin-top: 0;
+    }
+    .search{
+        width: 200px;
+        height: 13px;
+        font-size: 8px;
+    }
+    
+    nav #img {
+        width: 80px;
+        padding: 0px 20px;
+        margin-top: 6px;
+    }
+    label #btn {
+        font-size: 18px;
+        padding: 0px 0px;
+        margin-top: 10px;
+    }
+    nav {
+        padding: 0px 10px;
+    }
+    .nav-right i {
+        font-size: 12px;
+    }
+    .nav-middle i {
+        font-size: 12px;
+        padding: 0px 2px;
+    }
+    .nav-right ul li {
+        padding: 8px 0.5px;
+     }
+     .banner h1 {
+        margin-top: 20px;
+        letter-spacing: 4px;
+        font-size: 10px; 
+        margin-bottom: 20px; 
+    }
+    .secondbanner h1 {
+        margin-top: 0px;
+        letter-spacing: 4px;
+        font-size: 5px;
+    }
+    .secondbanner i{
+        font-size: 5px;
+    }
+    .sidebar ul li a{
+        font-size: 10px;
+    
+    }
+    .sidebar {
+        width: 200px;
+        left: -200px;
+        padding-top: 40px;
+    }
+    label #cancel {
+        left: -170px;
+        font-size: 10px;
+        top: 60px;
+    }
+    #check:checked ~ label #cancel {
+        left: 170px;
+    }
+    .sidebar ul li i {
+      font-size: 10px;
+    }
+
+    .accountscontainer{
+        margin-top: 0px;
+        margin-left: 8px;
+        margin-right: 8px;
+        box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.01);
+        height: fit-content;
+    }
+    
+    .thirdbanner{
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: transparent;
+        margin-top: 25px;
+    }
+    
+    .thirdbanner h1{
+        
+        letter-spacing: 8px;
+        word-spacing: 0px;
+        font-size: 14px;
+        margin-bottom: 25px;
+    }
+
+   
+    .ipaccount,.a{
+        width: 50px;
+        height: 50px;
+    }
+    .ipaccount{
+        width: 45px;
+        height: 45px;
+    }
+
+    .subscribebox{
+        width: 250px;
+        height: 350px;
+        border: 2px solid cornflowerblue;
+        border-radius: 20px;
+      }
+
+      #paymentinfo{
+        color: cornflowerblue;
+        font-family: 'poppins',sans-serif;
+        margin-top: 30px;
+      }
+      #paymentbutton{
+        width: 100px;
+        height: 35px;
+        border: 2px solid lightskyblue;
+        border-radius: 20px;
+        margin-top: 35px;
+        background: transparent;
+        color: cornflowerblue;
+        font-family: 'poppins',sans-serif;
+        cursor: pointer;
+        transition: all 0.5s;
+      }
+      #uploadvid,#uploadsong{
+        display: none;
+     }
+     #search{
+        display: inline-block;
+     }
+     .search{
+        display: none;
+     }
+     .roomverify{
+        height: 12px;
+        width: 12px;
+        border-radius: 50%;
+    }
+    .roomname{
+        font-size: 16px;
+        margin-left: 8px;
+        opacity: 1;
+    }
+    .accountname{
+        font-size: 16px;
+    }
+    .chatbox{
+        width: 95%;
+        margin-top: 12px;
+        margin-left: 12px;
+        border-radius: 0px;
+        border-left: 0px;
+        border-right: 0px;
+    }
+    .ipaccountverify{
+        height: 35px;
+        width: 35px;
+        border-radius: 50%;
+    }
+    .chat{
+        color: var(--secondary-color);
+        opacity: 0.8;
+        font-family: 'poppins',regular-400;
+        margin-top: 12px;
+        margin-bottom: 12px;
+    }
+    .chattime{
+        opacity: 0.6;
+    }
+    .chats{
+        font-size: 8px;
+    }
+    
+    .search{
+        display: none;
+    }
+    .search1{
+        width: 320px;
+        height: 25px;
+        display: none;
+        margin-right: 0px;
+        margin-left: 0px;
+        padding: 0px 0px;
+        font-size: 14px;
+        font-family: 'poppins',regular-400;
+        
+    }
+    nav #img {
+        width: 150px;
+        padding: 0px 0px;
+        margin-left: 0px;
+    }
+    nav{
+        height: 50px;
+    }
+    label #btn {
+        font-size: 30px;
+        padding: 2px 0px;
+        display: none;
+        
+    }
+    nav {
+        padding: 0px 0px;
+        background: black;
+    }
+    #theme-icon{
+        color: cornflowerblue;
+    }
+    .nav-right-icn i {
+        font-size: 24px;
+        margin-right: 0px;
+    }
+    #theme-icon{
+        margin-left: 8px;
+    }
+    .nav-middle i {
+        font-size: 12px;
+    }
+    .nav-right ul li {
+        padding: 0px 0px;
+     }
+    
+     .banner h1 {
+        margin-top: 20px;
+        letter-spacing: 4px;
+        font-size: 16px;  
+    }
+    .secondbanner h1 {
+        margin-top: 0px;
+        letter-spacing: 4px;
+        font-size: 12px;
+    }
+   
+    .account{
+        
+        border: 2px solid cornflowerblue;
+        width: 25px;
+        height: 25px;
+        margin-left: 0px;
+        margin-right: 8px;
+    }
+    .thumbnail {
+        width: 100%;
+        height: 250px;
+        border-radius: 0px;
+        border-top: 1px solid gray;
+        border-bottom: 1px solid gray;
+       }
+    .minimenu{
+        
+        padding: 10px;
+        top: 45px;
+    }
+    .minimenu ul li a{
+        font-size: 12px;
+        font-family: 'poppins',regular-400;
+      }
+      .minimenu i{
+          margin-right: 8px;
+          font-size: 16px;
+      }
+      .minimenu ul li{
+        margin-bottom: 12px;
+      }
+    .accounticon{
+        width: 28px;
+        height: 28px;
+        border-radius: 50%;
+        margin-right: 2px;
+    }
+    .sidebar ul li i {
+        font-size: 12px;
+      }
+     #uploadvid,#uploadsong{
+        display: none;
+     }
+   
+     .c{
+        height: 100%;
+        overflow-y: scroll;
+     }
+    
+     body{
+        overflow-y: scroll;
+        height: 100%;
+     }
+     .second-nav ul{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        
+     }
+     .second-nav ul li {
+        list-style: none;
+        margin-bottom: 12px;
+     }
+     .second-nav i {
+        color: cornflowerblue;
+        font-size: 24px;
+        margin-top: 12px;
+        opacity: 0.5;
+     }
+     .second-nav{
+        display: block;
+        height: unset;
+        background: black;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.4);
+     }
+     #start{
+        margin-left: 12px;
+     }
+     #end{
+        margin-right: 12px;
+     }
+     #chosen{
+        opacity: 1;
+     }
+     .contentcontainer{
+        margin-top: 0px;
+        row-gap: 12px;
+ 
+    }
+    .white-theme #theme-icon{
+        color: cornflowerblue;
+    }
+    .di p{
+        color: white;
+        text-align: center;
+        font-family: 'poppins',regular-400;
+        font-size: 12px;
+        opacity: 0.8;
+    }
+    .di{
+        text-align: center;
+    }
+    nav{
+        position: fixed;
+        width: 100%;
+    }
+    .container{
+        margin-top: 50px;
+        
+    }
+    .videodescription{
+        width: unset;
+    }
+    #time{
+        font-size: 12px;
+    }
+    #preloader{
+        height: 100%;
+        height: fill-avaible;
+        height: -webkit-fill-avaible;
+        height: -moz-avaible;
+        position: sticky;
+    }
+    .contentcontainer{
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        grid-column-gap: 100px;
+        margin-right: 4px;
+        margin-left: 4px;
+    }
+    .sidebar{
+        display: none;
+    }
+
+}
+
+@media (max-width:400px) and (orientation: portrait){
+   
+    .search{
+        width: 120px;
+        height: 15px;
+        display: none;
+    }
+    nav {
+        padding: 0px 0px;
+        top: 0;
+    }
+    .nav-right ul li {
+        padding: 0px 0px;
+     }
+     .minimenu ul li a{
+        font-size: 8px;
+      }
+      .minimenu ul li{
+        margin-bottom: 20px;
+      }
+    
+      
+}
+
+@media (max-width:360px) and (orientation: portrait){
+    .search1{
+        width: 280px;
+    }
+    
+    
+    nav {
+        padding: 0px 0px;
+    }
+   
+  
+    .nav-right ul li {
+        padding: 0px 0px;
+     }
+    
+}
+
+@media (max-width:330px) and (orientation: portrait)
+{
+    .search1{
+        width: 250px;
+    }
+    nav #img {
+        width: 130px;
+    }
+ 
+
+    #header{
+        margin-top: 150px;
+    }
+    body{
+        height: 100%;
+    }
+}
+
+@media (max-width:300px) and (orientation: portrait)
+{
+    .search{
+        width: 50px;
+    }
+    nav #img {
+        width: 100px;
+    }
+    label #btn {
+        font-size: 15px;
+        padding: 0px 0px;
+    }
+
+    #header{
+        margin-top: 150px;
+    }
+    .nav-right i,.second-nav i {
+        font-size: 10px;
+    }
+    .nav-middle i {
+        font-size: 10px;
+    }
+    .account{
+        width: 10px;
+        height: 10px;
+        padding: 0px 0px;
+       
+    }
+  
+}
